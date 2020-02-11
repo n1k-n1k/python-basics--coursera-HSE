@@ -16,32 +16,14 @@ The first box is smaller than the second one,
 The first box is larger than the second one,
 если вторая коробка может быть положена в первую,
 Boxes are incomparable, во всех остальных случаях.
-
 '''
 
-a1, b1, c1 = int(input()), int(input()), int(input())
-a2, b2, c2 = int(input()), int(input()), int(input())
+a1, b1, c1 = sorted([int(input()), int(input()), int(input())])
+a2, b2, c2 = sorted([int(input()), int(input()), int(input())])
 
-equal = a1 == a2 and b1 == b2 and c1 == c2\
-    or a1 == a2 and c1 == b2 and b1 == c2\
-    or b1 == a2 and a1 == b2 and c1 == c2\
-    or b1 == a2 and c1 == b2 and a1 == c2\
-    or c1 == a2 and a1 == b2 and b1 == c2\
-    or c1 == a2 and b1 == b2 and a1 == c2
-
-smaller = a1 <= a2 and b1 <= b2 and c1 <= c2\
-    or a1 <= a2 and c1 <= b2 and b1 <= c2\
-    or b1 <= a2 and a1 <= b2 and c1 <= c2\
-    or b1 <= a2 and c1 <= b2 and a1 <= c2\
-    or c1 <= a2 and a1 <= b2 and b1 <= c2\
-    or c1 <= a2 and b1 <= b2 and a1 <= c2
-
-larger = a1 >= a2 and b1 >= b2 and c1 >= c2\
-    or a1 >= a2 and c1 >= b2 and b1 >= c2\
-    or b1 >= a2 and a1 >= b2 and c1 >= c2\
-    or b1 >= a2 and c1 >= b2 and a1 >= c2\
-    or c1 >= a2 and a1 >= b2 and b1 >= c2\
-    or c1 >= a2 and b1 >= b2 and a1 >= c2
+equal = a1 == a2 and b1 == b2 and c1 == c2
+smaller = a1 <= a2 and b1 <= b2 and c1 <= c2
+larger = a1 >= a2 and b1 >= b2 and c1 >= c2
 
 if equal:
     print('Boxes are equal')
