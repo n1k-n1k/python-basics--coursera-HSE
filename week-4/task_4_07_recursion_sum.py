@@ -11,14 +11,9 @@
 
 
 def sum(a, b):
-    if a == 0:
-        return b
-    if b == 0:
-        return a
-    if 0 < a <= b:
+    if a and b:
         return sum(a - 1, b + 1)
-    if 0 < b < a:
-        return sum(a + 1, b - 1)
+    return a or b
 
 
 a, b = int(input()), int(input())
